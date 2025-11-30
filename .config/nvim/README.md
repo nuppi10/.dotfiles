@@ -1,0 +1,2 @@
+# init.lua
+Neovim rc

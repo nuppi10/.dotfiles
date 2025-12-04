@@ -10,7 +10,7 @@
 }
 
 #waybar {
-    background: rgba(0,0,0,1);
+    background: #1d2021;
     margin: 0px;
     font-weight: 500;
 }
@@ -20,7 +20,7 @@
 #custom-uptime,
 #memory,
 #cpu {
-    background-color: #000000;
+    background-color: transparent;
     padding: 0.3rem 0.7rem;
     margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
     border-radius: 6px; /* These modules are always rounded */
@@ -37,7 +37,7 @@
 
 #memory:hover,
 #cpu:hover {
-  background-color: rgb(41, 42, 53); /* Brighter highlight */
+  background-color: transparent; 
 }
 
 #workspaces button {
@@ -50,14 +50,8 @@
 }
 
 #workspaces button.active {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.15);
-
-}
-
-#workspaces button:hover {
-  background: rgb(41, 42, 53); /* Reference bright hover color */
-  color: #c6d0f5;
+    color: #fbf1c7;
+    background-color: #504945;
 }
 
 /* Center modules */
@@ -102,13 +96,15 @@
 
 #bluetooth {
   color: #888888;
-  font-size: 16px;
+  font-size: 25px;
 }
+
 #bluetooth.on {
   color: #5394fc;
 }
+
 #bluetooth.connected {
-  color: #5394fc;
+    color: #98971a;
 }
 
 

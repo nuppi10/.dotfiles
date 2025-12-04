@@ -1,10 +1,7 @@
 return {
-        "scottmckendry/cyberdream.nvim",
+        "sainnhe/gruvbox-material",
         config = function()
-            require("cyberdream").setup({
-                transparent = true
-            })
-            -- Load the colorscheme
-            vim.cmd("colorscheme cyberdream")
+            vim.g.gruvbox_material_transparent_background = 1
+            vim.cmd("colorscheme gruvbox-material")
         end
 }

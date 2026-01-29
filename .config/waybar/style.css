@@ -10,7 +10,7 @@
 }
 
 #waybar {
-    background: rgba(29, 32, 33, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     margin: 0px;
     font-weight: 500;
 }
@@ -50,11 +50,10 @@
 }
 
 #workspaces button.active {
-    color: #fbf1c7;
-    background-color: #504945;
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Center modules */
 #clock {
     background-color: transparent;
     padding: 0.3rem 0.7rem;
@@ -95,16 +94,16 @@
 }
 
 #bluetooth {
-  color: #888888;
+  color: rgba(237, 55, 58, 1);
   font-size: 18px;
 }
 
 #bluetooth.on {
-  color: #5394fc;
+  color: rgba(39, 217, 104, 1)
 }
 
 #bluetooth.connected {
-    color: #98971a;
+    color: rgba(31, 106, 209, 1)
 }
 
 

@@ -1,9 +1,11 @@
 return {
 
-        "sainnhe/gruvbox-material",
+        "bluz71/vim-moonfly-colors", 
+        name = "moonfly", 
+        lazy = false, priority = 1000,
         config = function()
-            vim.g.gruvbox_material_transparent_background = 1
-            vim.cmd("colorscheme gruvbox-material")
+            vim.g.moonflyTransparent = true
+            vim.cmd("colorscheme moonfly")
         end
 
 }

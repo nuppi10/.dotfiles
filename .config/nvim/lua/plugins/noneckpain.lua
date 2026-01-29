@@ -3,7 +3,7 @@ return {
     version = "*",
     config = function ()
         require("no-neck-pain").setup({
-            width = 110,
+            width = 130,
         })
         vim.api.nvim_create_autocmd("VimEnter", {
             callback = function ()

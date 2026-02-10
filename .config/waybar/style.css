@@ -1,32 +1,37 @@
 /* --- Global Styles --- */
 * {
     font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     min-height: 0;
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    color: #ffffff;
+    color: #DDC7A1;
 }
 
 #waybar {
-    background: rgba(0, 0, 0, 0.8);
-    margin: 0px;
+    background: #282828;
     font-weight: 500;
 }
 
 /* Left modules */
-#workspaces,
-#custom-uptime,
 #memory,
+#clock,
 #cpu {
-    background-color: transparent;
-    padding: 0.3rem 0.7rem;
-    margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
-    border-radius: 6px; /* These modules are always rounded */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 9px 15px;
     min-width: 0;
-    border: none;
+    margin: 0px 10px;
+}
+
+#bluetooth,
+#network,
+#custom-lock,
+#pulseaudio {
+    min-width: 10px;
+    padding: 9px 15px;
+}
+
+#bluetooth,
+#network,
+#pulseaudio {
+    border-right: 3px dashed rgba(237, 241, 214, 0.2);
 }
 
 #workspaces {
@@ -37,41 +42,20 @@
 
 #memory:hover,
 #cpu:hover {
-  background-color: transparent; 
+    background-color: #45403D;
 }
 
 #workspaces button {
-  color: #babbf1;
-  border-radius: 5px; /* Workspaces buttons are always rounded */
-  padding: 0.3rem 0.6rem;
-  background: transparent;
-  border: none;
-  outline: none;
+    border-radius: 0px;
+    padding: 0.3rem 0.6rem;
 }
 
 #workspaces button.active {
-    color: rgba(0, 0, 0, 1);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #45403D;
 }
 
-#clock {
-    background-color: transparent;
-    padding: 0.3rem 0.7rem;
-    margin: 5px 0px;
-    min-width: 0;
-}
-
-/* Right modules */
-#bluetooth,
-#pulseaudio,
-#custom-lock,
-#network {
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px; 
-  border-radius: 0;
-  box-shadow: none;
-  min-width: 0;
-  border: none;
+#workspaces button:hover {
+    background-color: #45403D;
 }
 
 #bluetooth:hover,
@@ -80,30 +64,9 @@
 #network:hover,
 #custom-lock:hover,
 #battery:hover {
-  background-color: rgb(41, 42, 53);
+    background-color: #45403D
 }
 
-#bluetooth {
-  margin-left: 0px; 
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
 
-#network.disconnected {
-  color: #e78284;
-}
-
-#bluetooth {
-  color: rgba(237, 55, 58, 1);
-  font-size: 18px;
-}
-
-#bluetooth.on {
-  color: rgba(39, 217, 104, 1)
-}
-
-#bluetooth.connected {
-    color: rgba(31, 106, 209, 1)
-}
 
 

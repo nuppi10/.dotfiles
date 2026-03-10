@@ -11,6 +11,8 @@ configuration {
     display-filebrowser: "󰉋 filebrowser:";
 
     dpi: 120;
+
 }
 
-@theme "gruvbox-material"
+@theme "./nord.rasi"
+

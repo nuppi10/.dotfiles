@@ -5,19 +5,26 @@
 }
 
 #waybar {
-    background: #2e3440; 
-    border: 3px solid #88c0d0;
+   /* background: rgba(46, 52, 64, 0.7); */
+  background: rgba(0, 0, 0, 0.7)
 }
 
 .modules-right {
      padding-right: 15px;
 }
 
-
-#workspaces button {
+#workspaces button label {
+    font-size: 18px;
     margin: 7px;
-    border-radius: 0px;
+}
 
+#workspaces button.active label { 
+  color: #bf616a
+}
+
+#custom-archicon {
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 #cpu {
@@ -30,14 +37,13 @@
 
 #bluetooth {
     color: #a3be8c;
+    margin-right: 2px;
+    
 }
 
-
-
-#workspaces button.active {
-    background: rgba(255, 255, 255, 0.2)
+#custom-lock {
+  margin-right: 4px;
 }
-
 
 
 

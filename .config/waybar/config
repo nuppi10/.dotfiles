@@ -1,22 +1,23 @@
 {
     "layer": "top",
     "position": "top",
-    "margin-top": 10,
-    "margin-left": 20,
-    "margin-right": 20,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
     "margin-bottom": 0,
     "height": 45,
     "reload_style_on_change": true,
     "spacing": 20,
     "modules-left": [
-        "hyprland/workspaces",
-        "cpu",
-        "memory"
+        "custom/archicon",
+        "hyprland/workspaces"
     ],
 
     "modules-center": ["clock"],
 
     "modules-right": [
+        "cpu",
+        "memory",
         "bluetooth",
         "network",
         "pulseaudio", 
@@ -24,7 +25,20 @@
     ],
 
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+          "*": [1,2,3,4,7,8,9]
+        },
+        "format-icons": {
+          "1": "󱥸",
+          "2": "󱗼",
+          "3": "󱗿",
+          "4": "󰇙",
+          "7": "󰇘",
+          "8": "󱗽",
+          "9": "󱗾"
+        }
     },
 
     "bluetooth": {
@@ -35,12 +49,15 @@
         "format-icons":{
             "on":"󰂯",
             "off": "󰂲",
-            "connected": "󰂱",
+            "connected": "󰂱"
         },
         "on-click": "alacritty -e bluetui",
         "tooltip-format-connected":"{device_enumerate}"
     },
-
+    "custom/archicon": {
+        "format": "   ",
+        "tooltip": false
+    },
     "clock": {
         "timezone": "Europe/Helsinki",
         "tooltip": false,

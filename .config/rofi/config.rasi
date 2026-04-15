@@ -14,5 +14,5 @@ configuration {
 
 }
 
-@theme "./nord.rasi"
+@theme "./theme.rasi"
 

@@ -1,9 +1,11 @@
 return {
-    "gbprod/nord.nvim",
+    "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("nord").setup({})
-      vim.cmd.colorscheme("nord")
+      require("cyberdream").setup({
+        transparent = true
+      })
+      vim.cmd.colorscheme("cyberdream")
     end,
 }

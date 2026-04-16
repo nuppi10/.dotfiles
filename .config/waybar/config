@@ -27,17 +27,16 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "persistent-workspaces": {
-          "*": [1,2,3,4,7,8,9]
-        },
         "format-icons": {
-          "1": "󱥸",
-          "2": "󱗼",
-          "3": "󱗿",
-          "4": "󰇙",
-          "7": "󰇘",
-          "8": "󱗽",
-          "9": "󱗾"
+          "1": "一",
+          "2": "二",
+          "3": "三",
+          "4": "四",
+          "5": "五",
+          "6": "六",
+          "7": "七",
+          "8": "八",
+          "9": "九"
         }
     },
 
@@ -60,8 +59,9 @@
     },
     "clock": {
         "timezone": "Europe/Helsinki",
+        "locale": "ja_JP.UTF-8",
         "tooltip": false,
-        "format": "{:%H:%M  -  %A, %d}",
+        "format": "{:L%Y年 %m月 %d日(%a) %H:%M}",
         "interval": 1
     },
 

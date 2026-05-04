@@ -1,49 +1,46 @@
+@define-color bg #161616;
+@define-color fg #f2f4f8;
+@define-color blue #78a9ff;
+@define-color magenta #be95ff;
+@define-color cyan #33b1ff;
+@define-color green #25be6a;
+
 * {
-    font-family: "Jetbrains Mono";
+    font-family: "JetBrains Mono Nerd Font", sans-serif;
     font-size: 15px;
-    color: #eceff4;
+    border: none;
+    border-radius: 0;
 }
 
-#waybar {
-   /* background: rgba(46, 52, 64, 0.7); */
-  background: rgba(0, 0, 0, 0.7)
+window#waybar {
+    background: @bg;
+    color: @fg;
 }
 
-.modules-right {
-     padding-right: 15px;
+#workspaces button {
+    color: @fg;
+    padding: 0 5px;
 }
 
-#workspaces button label {
-    font-size: 18px;
-    margin: 7px;
+#workspaces button.active {
+    background: @cyan;
 }
 
-#workspaces button.active label { 
-  color: #bf616a
+#workspaces button.empty {
+    color: #383838;
 }
 
-#custom-archicon {
-  font-size: 20px;
-  margin-left: 10px;
+.modules-right > widget > label,
+.modules-right > widget > box {
+    margin-left: 5px;   /* Väli vasemmalle */
+    margin-right: 5px;  /* Väli oikealle */
 }
 
-#cpu {
-    color: #ebcb8b;
-} 
-
-#memory {
-    color: #b48ead;
+#clock {
+    color: @fg;
+    font-weight: bold;
 }
 
-#bluetooth {
-    color: #a3be8c;
-    margin-right: 2px;
-    
-}
-
-#custom-lock {
-  margin-right: 4px;
-}
-
-
-
+#pulseaudio { color: @fg; }
+#network { color: @green; }
+#battery { color: @cyan; }

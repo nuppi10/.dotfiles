@@ -6,7 +6,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "cyberdream", -- NOT auto
+        theme = "carbonfox", -- NOT auto
         component_separators = { left = "│", right = "│" },
         section_separators = "",
         globalstatus = false,

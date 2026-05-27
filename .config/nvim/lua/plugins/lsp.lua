@@ -16,7 +16,6 @@ return {
     config = function()
         local cmp = require("cmp")
         local cmp_lsp = require("cmp_nvim_lsp")
-        local lspconfig = require("lspconfig")
 
         local capabilities = vim.tbl_deep_extend(
             "force",
@@ -36,14 +35,14 @@ return {
                 "zls",
             },
             handlers = {
+                -- Default handler using the modern native API
                 function(server_name)
-                    lspconfig[server_name].setup({
-                        capabilities = capabilities
-                    })
+                    vim.lsp.config(server_name, { capabilities = capabilities })
+                    vim.lsp.enable(server_name)
                 end,
 
                 ["lua_ls"] = function()
-                    lspconfig.lua_ls.setup({
+                    vim.lsp.config("lua_ls", {
                         capabilities = capabilities,
                         settings = {
                             Lua = {
@@ -57,12 +56,14 @@ return {
                             },
                         },
                     })
+                    vim.lsp.enable("lua_ls")
                 end,
 
                 ["ts_ls"] = function()
-                    lspconfig.ts_ls.setup({
+                    -- Note: util.root_pattern is no longer strictly required as nvim-lspconfig 
+                    -- populates standard root_markers into vim.lsp.config automatically
+                    vim.lsp.config("ts_ls", {
                         capabilities = capabilities,
-                        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
                         settings = {
                             javascript = {
                                 inlayHints = { includeInlayParameterNameHints = "all" }
@@ -72,12 +73,12 @@ return {
                             }
                         }
                     })
+                    vim.lsp.enable("ts_ls")
                 end,
 
                 ["zls"] = function()
-                    lspconfig.zls.setup({
+                    vim.lsp.config("zls", {
                         capabilities = capabilities,
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
                         settings = {
                             zls = {
                                 enable_inlay_hints = true,
@@ -86,11 +87,20 @@ return {
                             },
                         },
                     })
+                    vim.lsp.enable("zls")
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
                 end,
             }
         })
+
+        -- Godot GDScript LSP setup (Bypasses Mason, using native config/enable)
+        vim.lsp.config("gdscript", {
+            capabilities = capabilities,
+            name = "godot",
+            cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
+        })
+        vim.lsp.enable("gdscript")
 
         -- Setup completion (nvim-cmp)
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -128,4 +138,3 @@ return {
         })
     end
 }
-
